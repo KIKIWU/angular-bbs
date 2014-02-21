@@ -1,0 +1,20 @@
+ul.list-unstyled.post-list
+    li.clearfix(ng-repeat='post in postList')
+        .pull-left.photo
+            a(href='#')
+                img(width='60px',height='60px',ng-src='img/photo/{{post.author.photo}}')
+        .pull-left.post-main
+            .post-title.strong
+                a(ng-href='/post/{{post.id}}') {{post.title}}
+            p.post-summary {{post.content}}
+            small.post-info
+                span
+                    span(time-dire,value='{{post.postDate}}')
+                    span &nbsp;&nbsp;由&nbsp;&nbsp;
+                a(href='#') {{post.author.name}}
+                span &nbsp;发布在&nbsp;
+                a(href='#') {{post.specCol}}
+                span &nbsp;专栏浏览&nbsp;
+                a(href='#') {{post.browsing}}
+                span &nbsp;评论&nbsp;
+                a(href='#') {{post.comment}}

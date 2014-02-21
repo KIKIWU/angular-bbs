@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    include header
+    .container.container-body
+        .row
+            .col-xs-9.main
+                div(ng-view)
+            .col-xs-3.menu
+                include right
+    include footer

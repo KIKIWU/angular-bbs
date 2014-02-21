@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    include header
+    .container.container-body(ng-controller="pubPostCtrl")
+        .row
+            .col-xs-9.main
+                div
+                    textarea(rich-text-dire,style="width:655px;height: 400px;")
+                div(class="post-pub-file-upload")
+                    div(id="upload-file")
+                ul(class=" nav nav-pills")
+                    li(class="post-pub-file-upload-list",ng-repeat="fileUpload in fileUploadList")
+                        span(ng-bind="fileUpload.name")
+                        |&nbsp;
+                        span(ng-click="removeFileUpload($index)",class="glyphicon glyphicon-remove",style="cursor:pointer;")
+                div
+                    a(class="btn btn-primary pull-right") 发表
+            .col-xs-3.menu
+                div
+                    div 收件人：
+                    select
+                        option 请选择收件人
+    include footer

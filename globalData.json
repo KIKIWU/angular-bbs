@@ -1,0 +1,43 @@
+{
+    "version" : "0.0.0",
+    "userList" : [{"name" : "liuss123","pwd" : "liuss123"}],
+    "specColList" : [],
+    "postList" : [
+        {
+            "id" : 1,
+            "title" : "aaaaaa",
+            "content" : "bbbbbbbbb",
+            "postDate" : 1382023827311,
+            "specColId" : 1,
+            "specCol" : "营销问答",
+            "author" : {"id" : 1,"name" :"liuss","photo" : "1.jpg"},
+            "browsing" : 1,
+            "comment" : 1
+        },
+        {
+            "id" : 1,
+            "title" : "dfdfdfd",
+            "content" : "bbbbbbbbb",
+            "postDate" : 1382023820311,
+            "specColId" : 1,
+            "specCol" : "技术疑难",
+            "author" : {"id" : 1,"name" :"liuss","photo" : "1.jpg"},
+            "browsing" : 1,
+            "comment" : 1
+        }
+    ],
+    "teamList" : [
+        {
+            "id" : 1,
+            "name" : "sdf",
+            "photo" : "1.jpg",
+            "creator" : {
+                "id" : 34,
+                "name" : "sdf"
+            },
+            "createDate" : 1381762778662,
+            "memberCount" : 3443
+        }
+    ],
+    "replayList" : []
+}

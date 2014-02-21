@@ -1,0 +1,12 @@
+doctype 5
+html(ng-app='bbs')
+  head
+    link(rel='stylesheet',type='text/css',href='css/bootstrap.css')
+    link(rel='stylesheet',type='text/css',href='css/bbs_#{gd.version}.css')
+  body
+    block content
+    warn-dire
+    script(src='js/base_#{gd.version}.js',type='text/javascript')
+    script(src='js/plugins_#{gd.version}.js',type='text/javascript')
+    script(src='js/bbs_#{gd.version}.js',type='text/javascript')
+
