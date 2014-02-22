@@ -1,4 +1,4 @@
-angular.module('bbsService').service('domService',['$window',function(window){
+angular.module('bbsServer').service('domService',['$window',function(window){
     this.position = function(element){
         if (element == document.body)
             return !1;

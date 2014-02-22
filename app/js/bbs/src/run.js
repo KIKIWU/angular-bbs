@@ -5,7 +5,7 @@
  * Time: 下午5:29
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbs',['bbsCtrl','bbsFilter','bbsService','bbsDire','ui.bootstrap','angular.patch']);
+angular.module('bbs',['bbsCtrl','bbsFilter','bbsServer','bbsDire','ui.bootstrap','angular.patch']);
 Holder.run({
     themes: {
         "simple":{

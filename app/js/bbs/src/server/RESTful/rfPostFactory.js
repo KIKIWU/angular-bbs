@@ -5,7 +5,7 @@
  * Time: 下午1:44
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbsServiceRESTful').factory('rfPostFactory',['$resource',function($resource){
+angular.module('bbsServerRESTful').factory('rfPostFactory',['$resource',function($resource){
     var url = '/api/post/:postId';
     var actions = {
         list : {

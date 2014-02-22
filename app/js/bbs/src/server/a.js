@@ -5,4 +5,4 @@
  * Time: 下午9:33
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbsService',['bbsServiceRESTful']);
+angular.module('bbsServer',['bbsServerRESTful']);
