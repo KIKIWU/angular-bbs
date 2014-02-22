@@ -9,12 +9,12 @@ angular.module('bbsCtrlUser',['ngRoute','bbsServiceRESTful']);
 angular.module('bbsCtrlUser').config(['$routeProvider',function($routeProvider){
     $routeProvider.when('/userList',{
         templateUrl : 'tpl/userList.html',
-        controller : 'homeUserListCtrl'
+        controller : 'homeUserListController'
     }).when('/userEdit',{
         templateUrl : 'tpl/userEdit.html',
-        controller : 'userEditCtrl'
+        controller : 'userEditController'
     }).when('/userInfo',{
         templateUrl : 'tpl/userInfo.html',
-        controller : 'userInfoCtrl'
+        controller : 'userInfoController'
     });
 }]);

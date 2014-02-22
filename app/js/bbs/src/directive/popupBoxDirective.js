@@ -1,6 +1,6 @@
-angular.module('bbsDire').directive('popupBoxDire',['domService',function(domService){
+angular.module('bbsDire').directive('popupBoxDirective',['domService',function(domService){
     return {
-        scope : {popupObj : '=popupBoxDire'},
+        scope : {popupObj : '=popupBoxDirective'},
         link: function(scope,element,attr){
             if(!angular.isObject(scope.popupObj)) scope.popupObj = {};
             initData(scope.popupObj);

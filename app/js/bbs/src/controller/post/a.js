@@ -9,6 +9,6 @@ angular.module('bbsCtrlPost',['ngRoute','bbsServiceRESTful']);
 angular.module('bbsCtrlPost').config(['$routeProvider',function($routeProvider){
     $routeProvider.when('/',{
         templateUrl : 'tpl/post.html',
-        controller : 'homePostListCtrl'
+        controller : 'homePostListController'
     });
 }]);

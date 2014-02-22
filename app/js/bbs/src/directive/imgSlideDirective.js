@@ -1,4 +1,4 @@
-angular.module('bbsDire').directive('imgSlideDire',['$window','$log',function(window,log){
+angular.module('bbsDire').directive('imgSlideDirective',['$window','$log',function(window,log){
     return {
         restrict : 'E',
         scope : {list : '='},

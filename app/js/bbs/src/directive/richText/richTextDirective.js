@@ -1,5 +1,5 @@
 angular.module('bbsDire')
-    .directive('richTextDire',[function(){
+    .directive('richTextDirective',[function(){
         return {
             link : function($scope,$element){
                 $($element[0]).wysihtml5({

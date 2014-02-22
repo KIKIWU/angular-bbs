@@ -2,7 +2,7 @@ extends layout
 
 block content
     div.container
-        form.login-form(ng-submit="login()",novalidate,name='loginForm',ng-controller='welcomeLoginCtrl')
+        form.login-form(ng-submit="login()",novalidate,name='loginForm',ng-controller='welcomeLoginController')
             div.alert-panel
                 div.alert.alert-danger(ng-cloak,ng-show='loginSign') {{loginSign}}
                 div.alert.alert-danger(ng-cloak,ng-show='(loginForm.pwd.$error.maxlength || loginForm.pwd.$error.minlength) && runValidate')  密码长度必须为6-12位

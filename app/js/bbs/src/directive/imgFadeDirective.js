@@ -1,4 +1,4 @@
-angular.module('bbsDire').directive('imgFadeDire',['$window','$log',function(window,log){
+angular.module('bbsDire').directive('imgFadeDirective',['$window','$log',function(window,log){
     return {
         restrict : 'E',
         scope : {list : '='},

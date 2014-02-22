@@ -9,6 +9,6 @@ angular.module('bbsCtrlTeam',['ngRoute','bbsServiceRESTful']);
 angular.module('bbsCtrlTeam').config(['$routeProvider',function($routeProvider){
     $routeProvider.when('/team',{
         templateUrl : 'tpl/team.html',
-        controller : 'homeTeamListCtrl'
+        controller : 'homeTeamListController'
     });
 }]);

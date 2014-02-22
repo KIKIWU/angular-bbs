@@ -1,4 +1,4 @@
-angular.module('bbsCtrlPost').controller('pubPostCtrl',['$scope',function($scope){
+angular.module('bbsCtrlPost').controller('pubPostController',['$scope',function($scope){
     $scope.fileUploadList = [];
 
     $scope.removeFileUpload = function(index){

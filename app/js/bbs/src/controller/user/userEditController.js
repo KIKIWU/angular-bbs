@@ -1,10 +1,10 @@
-angular.module('bbsCtrlUser').controller('userInfoCtrl',['$scope',function($scope){
+angular.module('bbsCtrlUser').controller('userEditController',['$scope',function($scope){
     $scope.userInfo = {
         name: '刘顺顺',
         nickName: 'liuss',
         sex: 'woman',
         age: 18,
-        hobby: [1,2],
+        hobby: [1,3,4],
         allHobbies : [{value : '运动',id : 1},{value : '阅读',id : 2},{value : '看电视',id : 3},{value : '旅游',id : 4}],
         email : 'liuss@visionet.com.cn',
         homePage : 'http://liuss.com',

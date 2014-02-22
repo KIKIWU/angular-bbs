@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 angular.module('bbsDire')
-    .directive('warnDire',['$timeout',function($timeout){
+    .directive('warnDirective',['$timeout',function($timeout){
     return {
         restrict : 'E',
         template : '<div class="alert warn-dire" ></div>',

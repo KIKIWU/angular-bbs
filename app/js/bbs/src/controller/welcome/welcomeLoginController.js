@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 angular.module('bbsCtrlWelcome')
-    .controller('welcomeLoginCtrl',
+    .controller('welcomeLoginController',
         ['$scope','$http',function($scope,$http){
     $scope.login = function(){
         $scope.runValidate = true;

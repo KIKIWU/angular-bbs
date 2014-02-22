@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 angular.module('bbsDire')
-    .directive('timeDire',['$filter','$timeout',function($filter,$timeout){
+    .directive('timeDirective',['$filter','$timeout',function($filter,$timeout){
     function schedule( element, attrs){
         element.text($filter('timeFilter')(attrs.value));
         $timeout(function(){

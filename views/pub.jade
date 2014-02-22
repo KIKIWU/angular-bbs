@@ -2,11 +2,11 @@ extends layout
 
 block content
     include header
-    .container.container-body(ng-controller="pubPostCtrl")
+    .container.container-body(ng-controller="pubPostController")
         .row
             .col-xs-9.main
                 div
-                    textarea(rich-text-dire,style="width:655px;height: 400px;")
+                    textarea(rich-text-directive,style="width:655px;height: 400px;")
                 div(class="post-pub-file-upload")
                     div(id="upload-file")
                 ul(class=" nav nav-pills")
