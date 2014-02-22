@@ -5,7 +5,7 @@
  * Time: 下午1:44
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbsServiceRESTful').factory('rfTeam',['$resource',function($resource){
+angular.module('bbsServiceRESTful').factory('rfTeamFactory',['$resource',function($resource){
     var url = '/api/team/:teamId';
     var actions = {
         list : {

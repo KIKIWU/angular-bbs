@@ -1,4 +1,4 @@
-angular.module('bbsFilter').filter('dataRender', [function () {
+angular.module('bbsFilter').filter('dataRenderFilter', [function () {
     return function (data, label, select, array) {
         var labelValue = 'value';
         var selectValue = 'id';
