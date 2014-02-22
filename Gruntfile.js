@@ -7,8 +7,8 @@ module.exports = function (grunt) {
 
         vendor: {
             base : [
-                'vendor/angular/angular.js',
-                'vendor/jquery/jquery.js'
+                'vendor/jquery/jquery.js',
+                'vendor/angular/angular.js'
             ],
             plugins: [
                 'vendor/angular-animate/angular-animate.js',
