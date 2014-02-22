@@ -31,7 +31,7 @@ webStorm：开发工具
 9.app/js/\*/src/filter/：过滤器目录  
 10.app/js/\*/src/server/：除控制器，指令，过滤器之外的组件定义在该目录中  
 11.app/js/\*/src/server/RESTfull：保存访问服务器的resource实例，以factory公开出来  
-12.jade和css文件统一保存在app/js/src/view或`app/js/\*/src/controller|directive/\*/view/` 中  
+12.jade和css文件统一保存在app/js/src/view或app/js/\*/src/controller|directive/\*/view/ 中  
 13.app/css：保存全局css文件  
 
 
