@@ -5,4 +5,4 @@
  * Time: 下午9:59
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbsCtrl',['bbsCtrlWelcome','bbsCtrlPost','bbsCtrlTeam','bbsCtrlUser']);
+angular.module('bbsCtrl',['bbsCtrlWelcome','bbsCtrlPost','bbsCtrlTeam','bbsCtrlUser','bbsCtrlGlobal']);

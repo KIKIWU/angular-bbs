@@ -7,7 +7,7 @@
             "id" : 1,
             "title" : "aaaaaa",
             "content" : "bbbbbbbbb",
-            "postDate" : 1382023827311,
+            "postDate" : 1393056953444,
             "specColId" : 1,
             "specCol" : "营销问答",
             "author" : {"id" : 1,"name" :"liuss","photo" : "1.jpg"},
@@ -18,7 +18,7 @@
             "id" : 1,
             "title" : "dfdfdfd",
             "content" : "bbbbbbbbb",
-            "postDate" : 1382023820311,
+            "postDate" : 1393056913444,
             "specColId" : 1,
             "specCol" : "技术疑难",
             "author" : {"id" : 1,"name" :"liuss","photo" : "1.jpg"},
@@ -35,7 +35,7 @@
                 "id" : 34,
                 "name" : "sdf"
             },
-            "createDate" : 1381762778662,
+            "createDate" : 1393056153444,
             "memberCount" : 3443
         }
     ],
