@@ -11,7 +11,8 @@ bootstrap：css框架
 jquery：前端工具库  
 angular：前端mvc框架   
 webStorm：开发工具  
-============
+
+
 开发规范  
 1.用单独的文件定义模块，并取名a.js（应用的入口模块run.js除外）  
 2.value和constants定义在模块文件（a.js）中，除此之外的组件单独保存在各自的文件中，并且文件名和组件名要一致  
