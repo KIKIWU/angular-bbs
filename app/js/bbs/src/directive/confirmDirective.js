@@ -9,7 +9,7 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
     };
     return {
         scope : {
-            config : '=confirmDirective',
+            config : '=?confirmDirective',
             okText : '=',
             cancelText : '=',
             title : '=',
@@ -17,12 +17,7 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
             cancelFn : '&',
             width : '='
         },
-        compile : function(element,attr){
-            if(!attr.confirmDirective){
-                attr.$set('confirmDirective','{}',true);
-            }
-            return linkFn;
-        }
+        link : linkFn
     };
     function linkFn(scope, element, attr) {
         if (!angular.isObject(scope.config)) scope.config = {};
