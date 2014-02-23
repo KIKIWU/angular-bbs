@@ -6,7 +6,7 @@ block content
         .row
             .col-xs-9.main
                 div(ng-controller="adGlobalController",style="margin-bottom:15px;")
-                    img-slide-directive(width="650",height="100",direction="v",speed="4",list="adImgList")
+                    img-slide-directive(width="650",height="100",ng-attr-direction="'h'",speed="4",list="adImgList")
                 div(ng-view)
             .col-xs-3.menu
                 include right
