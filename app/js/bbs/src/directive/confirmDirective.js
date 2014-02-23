@@ -1,4 +1,4 @@
-angular.module('bbsDire').directive('popupBoxDirective',['domService','utilService',function(domService,utilService){
+angular.module('bbsDire').directive('confirmDirective',['domService','utilService',function(domService,utilService){
     var defaultConfig = {
         okText : '确定',
         cancelText : '取消',
@@ -9,7 +9,7 @@ angular.module('bbsDire').directive('popupBoxDirective',['domService','utilServi
     };
     return {
         scope : {
-            popupObj : '=popupBoxDirective',
+            popupObj : '=confirmDirective',
             okText : '=',
             cancelText : '=',
             title : '=',
