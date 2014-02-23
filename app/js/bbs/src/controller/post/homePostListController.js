@@ -5,7 +5,7 @@
  * Time: 下午11:39
  * To change this template use File | Settings | File Templates.
  */
-angular.module('bbsCtrlPost').controller('homePostListController',['rfPostFactory','$scope',function(rfPost,$scope){
+angular.module('bbsCtrlPost').controller('homePostListController',['rfPostFactory','$scope','alertBoxFactory',function(rfPost,$scope,alertBoxFactory){
     rfPost.list(function(data){
         $scope.postList = data.result;
     });
@@ -17,5 +17,8 @@ angular.module('bbsCtrlPost').controller('homePostListController',['rfPostFactor
         cancelFn : function(){
             console.log('cancel');
         }
+    }
+    $scope.show = function(){
+        alertBoxFactory('收藏成功',{textAlign : 'center',width: 200});
     }
 }]);
