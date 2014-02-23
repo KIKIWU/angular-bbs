@@ -20,6 +20,7 @@ webStorm：开发工具
 4.用数组的方式来声明组件的依赖  
 5.模块的run函数在模块定义文件a.js中定义，模块的config函数在zzz.js中定义  
 6.所有用到的template都用jade编写，由构建脚本统一构建在public/tpl/下  
+7.禁止在控制器中进行dom操作  
 项目目录结构  
 1.顶级目录app，public，vendor，static  
 2.app：前端源码所在目录包括html,css,js  
