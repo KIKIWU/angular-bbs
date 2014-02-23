@@ -1,8 +1,8 @@
 ul.list-unstyled.post-list
     li.clearfix(ng-repeat='post in postList')
         .pull-left.photo
-            a(href='#')
-                img(width='60px',height='60px',ng-src='img/photo/{{post.author.photo}}')
+            a(href='')
+                img(width='60px',height='60px',ng-attr-width='',controller="'userCardInfoController'",template-url="'/tpl/userCardInfo.html'",popup-box-directive='',direction="'right'",ng-src='img/photo/{{post.author.photo}}')
         .pull-left.post-main
             .post-title.strong
                 a(ng-href='/post/{{post.id}}') {{post.title}}
@@ -19,6 +19,8 @@ ul.list-unstyled.post-list
                 span &nbsp;评论&nbsp;
                 a(href='') {{post.comment}}
                 span &nbsp;&nbsp;
-                a(href="",confirm-directive="popupObj",width="300",title="'sdddd的反反复复反反复复师傅地地道道的地地道道的地方是是是是地方是是是是是是是'") 删除
+                a(href="",confirm-directive="",width="300",title="'sdddd的反反复复反反复复师傅地地道道的地地道道的地方是是是是地方是是是是是是是'") 删除
                 span &nbsp;|&nbsp;
                 a(href="",ng-click="show()") 收藏
+                span &nbsp;|&nbsp;
+                a() {{2+2}}
