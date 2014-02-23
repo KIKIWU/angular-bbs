@@ -9,7 +9,6 @@ angular.module('bbsDire').directive('imgFadeDirective',['$window','$log','utilSe
     return {
         restrict : 'E',
         scope : {
-            config : '=imgFadeDirective',
             list : '=',
             width : '=',
             height : '=',
@@ -17,12 +16,7 @@ angular.module('bbsDire').directive('imgFadeDirective',['$window','$log','utilSe
         },
         template : '<div style="overflow: hidden;position: relative"></div>',
         replace : true,
-        compile : function(element,attr){
-            if(!attr.imgFadeDirective){
-                attr.$set('imgFadeDirective','{}',true);
-            }
-            return linkFn;
-        }
+        link : linkFn
     };
     function linkFn(scope, element, attr) {
         if (!angular.isObject(scope.config)) scope.config = {};

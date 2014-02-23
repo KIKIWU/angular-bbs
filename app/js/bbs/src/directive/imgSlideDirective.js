@@ -10,7 +10,6 @@ angular.module('bbsDire').directive('imgSlideDirective',['$window','$log','utilS
     return {
         restrict : 'E',
         scope : {
-            config : '=imgSlideDirective',
             list : '=',
             width : '=',
             height : '=',
@@ -19,12 +18,7 @@ angular.module('bbsDire').directive('imgSlideDirective',['$window','$log','utilS
         },
         template : '<div style="overflow: hidden;position: relative"></div>',
         replace : true,
-        compile : function(element,attr){
-            if(!attr.imgSlideDirective){
-                attr.$set('imgSlideDirective','{}',true);
-            }
-            return linkFn;
-        }
+        link : linkFn
     };
     function linkFn(scope, element, attr) {
         if (!angular.isObject(scope.config)) scope.config = {};
