@@ -91,7 +91,7 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
                 contentEle.children('.p_loading').remove();
                 contentEle.append(angular.element(scope.config.template));
                 contentEle.attr('ng-controller',scope.config.controller);
-                $compile(contentEle)(scope);
+                $compile(contentEle)(angular.extend(scope,{config:scope.config,attr:attr}));
                 try{scope.$digest();}catch(e){};
             }
         }

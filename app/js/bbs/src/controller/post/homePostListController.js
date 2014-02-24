@@ -9,14 +9,8 @@ angular.module('bbsCtrlPost').controller('homePostListController',['rfPostFactor
     rfPost.list(function(data){
         $scope.postList = data.result;
     });
-    $scope.popupObj = {
-        title : '确定删sddsdssd收到第三方第三方史蒂夫方法的撒除？',
-        okFn : function(){
-            console.log('ok');
-        },
-        cancelFn : function(){
-            console.log('cancel');
-        }
+    $scope.deletePostOk = function(config,attr){
+        console.log('confirm:' + config);
     }
     $scope.show = function(){
         alertBoxFactory('收藏成功',{textAlign : 'center',width: 200});

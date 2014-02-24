@@ -48,14 +48,14 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
             popupBodyEle.find('.popup-ok').on('click', function () {
                 popupBodyEle.animate({top: popupEleHeight + 'px'}, 'fast', null, function () {
                     removeEle();
-                    scope.config.okFn({element: element, attr: attr});
+                    scope.config.okFn({config : scope.config,attr : attr});
                 });
             });
 
             popupBodyEle.find('.popup-cancel').on('click', function () {
                 popupBodyEle.animate({top: popupEleHeight + 'px'}, 'fast', null, function () {
                     removeEle();
-                    scope.config.cancelFn({element: element, attr: attr});
+                    scope.config.cancelFn({config : scope.config,attr : attr});
                 });
             });
 
