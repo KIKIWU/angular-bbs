@@ -39,11 +39,11 @@ module.exports = function (grunt) {
             plugins: { src: '<%= vendor.plugins %>', dest: 'public/js/plugins_<%= version %>.js' },
             bbs: {
                 src: [
-                    'app/resource/module/**/*.js',
-                    'app/resource/controller/**/*.js',
-                    'app/resource/directive/**/*.js',
-                    'app/resource/filter/**/*.js',
-                    'app/resource/server/**/*.js'
+                    'app/source/module/**/*.js',
+                    'app/source/controller/**/*.js',
+                    'app/source/directive/**/*.js',
+                    'app/source/filter/**/*.js',
+                    'app/source/server/**/*.js'
                 ],
                 dest: 'public/js/bbs_<%= version %>.js'
             },
