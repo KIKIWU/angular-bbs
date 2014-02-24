@@ -92,7 +92,7 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
                 contentEle.append(angular.element(scope.config.template));
                 contentEle.attr('ng-controller',scope.config.controller);
                 $compile(contentEle)(scope);
-                scope.$digest();
+                try{scope.$digest();}catch(e){};
             }
         }
 
