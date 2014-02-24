@@ -109,14 +109,8 @@ module.exports = function (grunt) {
     grunt.registerTask('js-bbs',['concat:bbs','uglify:bbs']);
     grunt.registerTask('js-bbs-watch',['watch:bbs']);
 
-    grunt.registerTask('js-admin',['concat:admin','uglify:admin']);
-    grunt.registerTask('js-admin-watch',['watch:admin']);
-
     grunt.registerTask('css-bbs',['concat:bbsCss']);
     grunt.registerTask('css-bbs-watch',['watch:bbsCss']);
-
-    grunt.registerTask('css-admin',['concat:adminCss']);
-    grunt.registerTask('css-admin-watch',['watch:adminCss']);
 
     grunt.registerTask('tpl',['jade:tpl']);
     grunt.registerTask('tpl-watch',['watch:tpl']);
