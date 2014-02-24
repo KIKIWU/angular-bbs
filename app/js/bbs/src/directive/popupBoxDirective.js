@@ -11,12 +11,12 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
     return {
         scope: {
             config: '=?popupBoxDirective',
-            width: '=',
-            event: '=',
-            template: '=',
-            templateUrl: '=',
-            controller: '=',
-            direction: '='
+            width: '@',
+            event: '@',
+            template: '@',
+            templateUrl: '@',
+            controller: '@',
+            direction: '@'
         },
         link: linkFn
     }
@@ -98,13 +98,13 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
 
         function getPosition(dist, tag, direction) {
             if (direction == 'top') {
-                return {top: dist.top - tag.height + tag.top - 5 , left: dist.left + tag.left};
+                return {top: dist.top - tag.height + tag.top - 3 , left: dist.left + tag.left};
             } else if (direction == 'left') {
-                return {top: dist.top + tag.top, left: dist.left - tag.width + tag.left - 5};
+                return {top: dist.top + tag.top, left: dist.left - tag.width + tag.left - 3};
             } else if (direction == 'right') {
-                return {top: dist.top + tag.top, left: dist.left + dist.width + tag.left + 5};
+                return {top: dist.top + tag.top, left: dist.left + dist.width + tag.left + 3};
             } else if (direction == 'bottom') {
-                return {top: dist.top + dist.height + tag.top + 5, left: dist.left + tag.left};
+                return {top: dist.top + dist.height + tag.top + 3, left: dist.left + tag.left};
             } else {
                 return {top: 0, left: 0};
             }

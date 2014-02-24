@@ -10,9 +10,9 @@ angular.module('bbsDire').directive('imgFadeDirective',['$window','$log','utilSe
         restrict : 'E',
         scope : {
             list : '=',
-            width : '=',
-            height : '=',
-            speed : '='
+            width : '@',
+            height : '@',
+            speed : '@'
         },
         template : '<div style="overflow: hidden;position: relative"></div>',
         replace : true,

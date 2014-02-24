@@ -10,12 +10,12 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
     return {
         scope : {
             config : '=?confirmDirective',
-            okText : '=',
-            cancelText : '=',
-            title : '=',
+            okText : '@',
+            cancelText : '@',
+            title : '@',
             okFn : '&',
             cancelFn : '&',
-            width : '='
+            width : '@'
         },
         link : linkFn
     };

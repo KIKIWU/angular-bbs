@@ -11,10 +11,10 @@ angular.module('bbsDire').directive('imgSlideDirective',['$window','$log','utilS
         restrict : 'E',
         scope : {
             list : '=',
-            width : '=',
-            height : '=',
-            speed : '=',
-            direction : '='
+            width : '@',
+            height : '@',
+            speed : '@',
+            direction : '@'
         },
         template : '<div style="overflow: hidden;position: relative"></div>',
         replace : true,
