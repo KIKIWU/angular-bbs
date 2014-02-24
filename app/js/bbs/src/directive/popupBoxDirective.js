@@ -40,7 +40,7 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
 
             var panelHtml = '<div style="z-index:100;border-radius:4px;position:absolute;overflow: hidden;width:' + scope.config.width + 'px"></div>';
             var bodyHtml = '<div style="display:none;padding:3px;background:url(/img/layer_bg.png);"></div>';
-            var contentHtml = '<div style="padding:10px 20px;background-color: #ffffff;text-align: center;">加载中...</div>';
+            var contentHtml = '<div style="padding:10px 20px;background-color: #ffffff;text-align: center;"><div class="p_loading">加载中...</div><div class="p_arrow"></div></div>';
             var panelEle = angular.element(panelHtml);
             var bodyEle = angular.element(bodyHtml);
             var contentEle = angular.element(contentHtml);
@@ -74,7 +74,7 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
                             element.data('isShow', false);
                         });
                     }
-                }, 300);
+                }, 100);
             }
 
             if(scope.config.template && scope.config.template != '#') compileContent();
@@ -88,7 +88,8 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
             }
 
             function compileContent(){
-                contentEle.html(scope.config.template);
+                contentEle.children('.p_loading').remove();
+                contentEle.append(angular.element(scope.config.template));
                 contentEle.attr('ng-controller',scope.config.controller);
                 $compile(contentEle)(scope);
                 scope.$digest();
@@ -97,16 +98,17 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
 
         function getPosition(dist, tag, direction) {
             if (direction == 'top') {
-                return {top: dist.top - tag.height + tag.top, left: dist.left + tag.left};
+                return {top: dist.top - tag.height + tag.top - 5 , left: dist.left + tag.left};
             } else if (direction == 'left') {
-                return {top: dist.top + tag.top, left: dist.left - tag.width + tag.left};
+                return {top: dist.top + tag.top, left: dist.left - tag.width + tag.left - 5};
             } else if (direction == 'right') {
-                return {top: dist.top + tag.top, left: dist.left + dist.width + tag.left};
+                return {top: dist.top + tag.top, left: dist.left + dist.width + tag.left + 5};
             } else if (direction == 'bottom') {
-                return {top: dist.top + dist.height + tag.top, left: dist.left + tag.left};
+                return {top: dist.top + dist.height + tag.top + 5, left: dist.left + tag.left};
             } else {
                 return {top: 0, left: 0};
             }
         }
+
     }
 }]);

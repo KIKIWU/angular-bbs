@@ -1,1 +1,3 @@
-div {{1+1}}
+div {{userInfo.name}} : {{userInfo.age}}
+ul
+    li(ng-repeat="h in userInfo.hobby") {{h | dataRenderFilter:userInfo.allHobbies}}

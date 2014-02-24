@@ -2,7 +2,7 @@ ul.list-unstyled.post-list
     li.clearfix(ng-repeat='post in postList')
         .pull-left.photo
             a(href='')
-                img(width='60px',height='60px',ng-attr-width='',controller="'userCardInfoController'",template-url="'/tpl/userCardInfo.html'",popup-box-directive='',direction="'right'",ng-src='img/photo/{{post.author.photo}}')
+                img(width='60px',height='60px',ng-attr-width='',controller="'userCardInfoController'",template-url="'/tpl/userCardInfo.html'",popup-box-directive='',direction="'top'",ng-src='img/photo/{{post.author.photo}}')
         .pull-left.post-main
             .post-title.strong
                 a(ng-href='/post/{{post.id}}') {{post.title}}
