@@ -49,7 +49,7 @@ module.exports = function (grunt) {
             },
             bbsCss: {
                 options: { separator: '' },
-                src: ['app/css/**/*.css','app/js/bbs/**/*.css'], dest: 'public/css/bbs_<%= version %>.css'
+                src: ['app/css/**/*.css','app/source/**/*.css'], dest: 'public/css/bbs_<%= version %>.css'
             }
         },
 
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
         jade: {
             options: { pretty: true },
             page: { expand: true, cwd: 'app/jade/', src: ['**/*.jade', '!**/_*.jade'], dest: 'static/', ext: '.html' },
-            tpl: { expand: true, cwd: 'app/js/', src: ['**/*.jade'], dest: 'public/tpl', ext: '.html', flatten: true }
+            tpl: { expand: true, cwd: 'app/source/', src: ['**/*.jade'], dest: 'public/tpl', ext: '.html', flatten: true }
         },
 
         sass: {
@@ -75,10 +75,10 @@ module.exports = function (grunt) {
             livereload: { files: ['static/**/*.html'] },
             base: { files: '<%= vendor.base %>', tasks: ['concat:base'] },
             plugins: { files: '<%= vendor.plugins %>', tasks: ['concat:plugins'] },
-            bbs: { options: {livereload : 10001},files: ['app/js/bbs/**/*.js'], tasks: ['concat:bbs'] },
+            bbs: { options: {livereload : 10001},files: ['app/source/**/*.js'], tasks: ['concat:bbs'] },
             page: { files: ['app/jade/**/*.jade'], tasks: ['jade:page'] },
-            tpl: { options: {livereload : 10003},files: ['app/js/**/*.jade'], tasks: ['jade:tpl'] },
-            bbsCss: {options: {livereload : 10002}, files: ['app/css/**/*.css','app/js/bbs/**/*.css'], tasks: ['concat:bbsCss'] },
+            tpl: { options: {livereload : 10003},files: ['app/source/**/*.jade'], tasks: ['jade:tpl'] },
+            bbsCss: {options: {livereload : 10002}, files: ['app/css/**/*.css','app/source/**/*.css'], tasks: ['concat:bbsCss'] },
             bootstrap: { files: ['app/sass/bootstrap/**/*.scss'], tasks: ['sass:bootstrap'] },
             styles: { files: ['app/sass/**/*.scss', '!app/sass/bootstrap/**/*.scss'], tasks: ['sass:page'] },
             images: { files: ['app/img/**/*.{gif,jpg,jpeg,png}'], tasks: ['copy:img'] }
