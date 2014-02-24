@@ -14,11 +14,11 @@ webStorm：开发工具
 
 
 开发规范  
-1.用单独的文件定义模块，并取名a.js（应用的入口模块run.js除外）  
-2.value和constants定义在模块文件（a.js）中，除此之外的组件单独保存在各自的文件中，并且文件名和组件名要一致  
+1.用单独的文件定义模块，文件名和模块名要一致  
+2.value和constants定义在模块文件中，除此之外的组件单独保存在各自的文件中，并且文件名和组件名要一致  
 3.组件名要能体现出组件的类型：控制器以'Controller'结尾，指令以'Directive'结尾，过滤器以'Filter'结尾... ...  
 4.用数组的方式来声明组件的依赖  
-5.模块的run函数在模块定义文件a.js中定义，模块的config函数在zzz.js中定义  
+5.模块的run函数在模块定义文件中定义  
 6.所有用到的template都用jade编写，由构建脚本统一构建在public/tpl/下  
 7.禁止在控制器中进行dom操作  
 项目目录结构  
@@ -27,13 +27,13 @@ webStorm：开发工具
 3.public：源码输出目录  
 4.vendor：放置第三方css和js库  
 5.static：存储静态html  
-6.app/js/：前端js开发目录  
-7.app/js/\*/src/controller/：控制器目录，按业务模块来划分控制器  
-8.app/js/\*/src/directive/：指令目录  
-9.app/js/\*/src/filter/：过滤器目录  
-10.app/js/\*/src/server/：除控制器，指令，过滤器之外的组件定义在该目录中  
-11.app/js/\*/src/server/RESTfull：保存访问服务器的resource实例，以factory公开出来  
-12.jade和css文件统一保存在app/js/src/view或app/js/\*/src/controller|directive/\*/view/ 中  
+6.app/resource/：前端js开发目录  
+7.app/resource/controller/：控制器目录，按业务模块来划分控制器  
+8.app/resource/directive/：指令目录  
+9.app/resource/filter/：过滤器目录  
+10.app/resource/server/：除控制器，指令，过滤器之外的组件定义在该目录中  
+11.app/resource/server/RESTful：保存访问服务器的resource实例，以factory公开出来  
+12.jade和css文件统一保存在app/resource/view或app/resource/controller|directive/\*/view/ 中  
 13.app/css：保存全局css文件  
 
 
