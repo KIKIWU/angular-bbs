@@ -37,23 +37,26 @@ module.exports = function (grunt) {
             options: { separator: ';' },
             base: { src: '<%= vendor.base %>', dest: 'public/js/base_<%= version %>.js' },
             plugins: { src: '<%= vendor.plugins %>', dest: 'public/js/plugins_<%= version %>.js' },
-            bbs: { src: ['app/js/bbs/**/*.js'], dest: 'public/js/bbs_<%= version %>.js' },
-            admin: { src: ['app/js/admin/**/*.js'], dest: 'public/js/admin_<%= version %>.js' },
+            bbs: {
+                src: [
+                    'app/resource/module/**/*.js',
+                    'app/resource/controller/**/*.js',
+                    'app/resource/directive/**/*.js',
+                    'app/resource/filter/**/*.js',
+                    'app/resource/server/**/*.js'
+                ],
+                dest: 'public/js/bbs_<%= version %>.js'
+            },
             bbsCss: {
                 options: { separator: '' },
                 src: ['app/css/**/*.css','app/js/bbs/**/*.css'], dest: 'public/css/bbs_<%= version %>.css'
-            },
-            adminCss: {
-                options: { separator: '' },
-                src: ['app/css/**/*.css','app/js/admin/**/*.css'], dest: 'public/css/admin_<%= version %>.css'
             }
         },
 
         uglify: {
             base: { files: { 'public/js/base_<%= version %>.min.js': ['public/js/base_<%= version %>.js'] } },
             plugins: { files: { 'public/js/plugins_<%= version %>.min.js': ['public/js/plugins_<%= version %>.js'] } },
-            bbs: { files: { 'public/js/bbs_<%= version %>.min.js': ['public/js/bbs_<%= version %>.js'] } },
-            admin: { files: { 'public/js/admin_<%= version %>.min.js': ['public/js/admin_<%= version %>.js'] } }
+            bbs: { files: { 'public/js/bbs_<%= version %>.min.js': ['public/js/bbs_<%= version %>.js'] } }
         },
 
         jade: {
@@ -64,7 +67,7 @@ module.exports = function (grunt) {
 
         sass: {
             bootstrap: { src: '<%= vendor.bootstrap %>', dest: 'vendor/bootstrap/css/bootstrap.css' },
-            page: { expand: true, cwd: 'app/sass/', src: ['**/*.scss', '!bootstrap/**/*.scss'], dest: 'public/css/', ext: '.css' }
+            dev: { expand: true, cwd: 'app/sass/', src: ['**/*.scss', '!bootstrap/**/*.scss'], dest: 'public/css/', ext: '.css' }
         },
 
         watch: {
@@ -73,11 +76,9 @@ module.exports = function (grunt) {
             base: { files: '<%= vendor.base %>', tasks: ['concat:base'] },
             plugins: { files: '<%= vendor.plugins %>', tasks: ['concat:plugins'] },
             bbs: { options: {livereload : 10001},files: ['app/js/bbs/**/*.js'], tasks: ['concat:bbs'] },
-            admin: { files: ['app/js/admin/**/*.js'], tasks: ['concat:admin'] },
             page: { files: ['app/jade/**/*.jade'], tasks: ['jade:page'] },
             tpl: { options: {livereload : 10003},files: ['app/js/**/*.jade'], tasks: ['jade:tpl'] },
             bbsCss: {options: {livereload : 10002}, files: ['app/css/**/*.css','app/js/bbs/**/*.css'], tasks: ['concat:bbsCss'] },
-            adminCss: { files: ['app/css/**/*.css','app/js/admin/**/*.css'], tasks: ['concat:adminCss'] },
             bootstrap: { files: ['app/sass/bootstrap/**/*.scss'], tasks: ['sass:bootstrap'] },
             styles: { files: ['app/sass/**/*.scss', '!app/sass/bootstrap/**/*.scss'], tasks: ['sass:page'] },
             images: { files: ['app/img/**/*.{gif,jpg,jpeg,png}'], tasks: ['copy:img'] }
