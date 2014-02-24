@@ -26,7 +26,7 @@ webStorm：开发工具
 2.app：前端源码所在目录包括html,css,js  
 3.public：源码输出目录  
 4.vendor：放置第三方css和js库  
-5.static：存储静态html
+5.static：存储静态html  
 6.app/js/：前端js开发目录  
 7.app/js/\*/src/controller/：控制器目录，按业务模块来划分控制器  
 8.app/js/\*/src/directive/：指令目录  
