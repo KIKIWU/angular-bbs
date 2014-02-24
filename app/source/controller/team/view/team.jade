@@ -1,0 +1,13 @@
+ul.list-unstyled.team-list
+    li.clearfix(ng-repeat='team in teamList')
+        .pull-left.photo
+            img(ng-src='/img/photo/{{team.photo}}')
+        .pull-left.team-body
+            .strong.team-name {{team.name}}
+            small
+                span 由&nbsp;&nbsp;
+                a {{team.creator.name}}
+                span &nbsp;&nbsp;创建于&nbsp;&nbsp;
+                b {{team.createDate | date:'yyyy-MM-dd'}}
+                span &nbsp;&nbsp;成员数&nbsp;&nbsp;
+                a(href="") {{team.memberCount}}

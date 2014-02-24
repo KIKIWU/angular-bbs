@@ -1,0 +1,89 @@
+.login-form{
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 170px 0px;
+}
+.login-form input[type='text']{
+    margin-bottom: 15px;
+    height: 45px;
+}
+.login-form input[type='password']{
+    height: 45px;
+    margin-top: 15px;
+}
+.login-form a{
+    margin: 10px 10px;
+}
+
+
+.alert-panel div{
+    position: fixed;
+    top:0px;
+    width:100%;
+    left: 0px;
+    text-align: center;
+}
+
+
+.container-body{
+    margin-top: 70px;
+    max-width: 930px;
+}
+.container-body .main{
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 30px 20px;
+}
+
+.container-footer{
+    max-width: 930px;
+}
+
+
+.post-list .post-main{
+    width: 540px;
+    margin-left: 10px;
+}
+.post-list li{
+    margin-bottom: 15px;
+}
+.post-list .photo{
+    margin: 0px 15px;
+}
+.post-list .post-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.post-list .post-info{
+    color: gray;
+}
+
+
+.team-list .team-body{
+    margin-left: 10px;
+}
+.team-list .photo{
+    margin: 0px 15px;
+}
+.team-list .team-name{
+    margin: 5px 0px;
+    font-size: 20px;
+}
+.team-list .photo img{
+    width:60px;
+    height:60px;
+}
+
+.warn-dire{
+    position: fixed;
+    top:60px;
+    left:220px;
+    width:915px;
+}
+
+.post-pub-file-upload{
+    margin-top:15px;
+}
+.post-pub-file-upload-list{
+    margin:5px 10px;
+}
