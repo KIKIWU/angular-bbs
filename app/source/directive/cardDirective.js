@@ -1,16 +1,19 @@
-angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilService','$compile','$http', function (domService, utilService,$compile,$http) {
+angular.module('bbsDire').directive('cardDirective', ['domService', 'utilService','$compile','$http', function (domService, utilService,$compile,$http) {
     var defaultConfig = {
         width: 190,
         event: 'mouseenter',
-        direction: 'top',
+        direction: 'right',
         template: '#',
         templateUrl: '#',
         controller: '#'
     };
+    var panelHtml = '<div style="z-index:100;border-radius:4px;position:absolute;overflow: hidden;width:$width$px"></div>';
+    var bodyHtml = '<div style="display:none;padding:3px;background:url(/img/layer_bg.png);"></div>';
+    var contentHtml = '<div style="padding:10px 20px;background-color: #ffffff;text-align: center;"><div class="p_loading">加载中...</div><div class="p_arrow"></div></div>';
 
     return {
         scope: {
-            config: '=?popupBoxDirective',
+            config: '=?cardDirective',
             width: '@',
             event: '@',
             template: '@',
@@ -31,17 +34,9 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
             if (element.data('isShow')) return;
             else element.data('isShow', true);
 
-            if (element.data('popupBox')) {
-                element.data('popupBox').show();
-                return;
-            }
-
             var elementPosition = domService.position(element[0]);
 
-            var panelHtml = '<div style="z-index:100;border-radius:4px;position:absolute;overflow: hidden;width:' + scope.config.width + 'px"></div>';
-            var bodyHtml = '<div style="display:none;padding:3px;background:url(/img/layer_bg.png);"></div>';
-            var contentHtml = '<div style="padding:10px 20px;background-color: #ffffff;text-align: center;"><div class="p_loading">加载中...</div><div class="p_arrow"></div></div>';
-            var panelEle = angular.element(panelHtml);
+            var panelEle = angular.element(panelHtml.replace('$width$',scope.config.width));
             var bodyEle = angular.element(bodyHtml);
             var contentEle = angular.element(contentHtml);
             bodyEle.append(contentEle);
@@ -66,19 +61,11 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
             });
             element.one('mouseleave', removeFn);
 
-            function removeFn(event) {
-                window.setTimeout(function () {
-                    if (!panelEle.data('enter')) {
-                        bodyEle.fadeOut('fast',null,function(){
-                            panelEle.remove();
-                            element.data('isShow', false);
-                        });
-                    }
-                }, 100);
+            if(scope.config.template && scope.config.template != '#'){
+                compileContent();
+            }else {
+                loadContent();
             }
-
-            if(scope.config.template && scope.config.template != '#') compileContent();
-            else loadContent();
 
             function loadContent(){
                 $http({url : scope.config.templateUrl,method:'get'}).success(function(data){
@@ -93,6 +80,17 @@ angular.module('bbsDire').directive('popupBoxDirective', ['domService', 'utilSer
                 contentEle.attr('ng-controller',scope.config.controller);
                 $compile(contentEle)(angular.extend(scope,{config:scope.config,attr:attr}));
                 try{scope.$digest();}catch(e){};
+            }
+
+            function removeFn(event) {
+                window.setTimeout(function () {
+                    if (!panelEle.data('enter')) {
+                        bodyEle.fadeOut('fast',null,function(){
+                            panelEle.remove();
+                            element.data('isShow', false);
+                        });
+                    }
+                }, 100);
             }
         }
 

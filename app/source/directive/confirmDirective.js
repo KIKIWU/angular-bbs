@@ -7,6 +7,9 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
         cancelFn : angular.noop,
         width : 190
     };
+    var popupPanelHtml = '<div style="width:$width$px;z-index:100;border-radius:4px;margin:0px;overflow: hidden;position: relative;"></div>';
+    var popupBodyHtml = '<div style="padding:3px;background:url(/img/layer_bg.png);position: relative;"><div style="line-height:30px;padding:12px;background-color:white;"><div style="margin-bottom:4px;text-align: center;">$title$</div><div style="text-align: center;"><span class="btn btn-success popup-ok">$okText$</span>&nbsp;&nbsp;<span class="btn btn-default popup-cancel">$cancelText$</span></div></div></div>';
+
     return {
         scope : {
             config : '=?confirmDirective',
@@ -22,16 +25,16 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
     function linkFn(scope, element, attr) {
         if (!angular.isObject(scope.config)) scope.config = {};
         utilService.fetch(scope, scope.config, defaultConfig, scope.config);
-        var popupPanelHtml = '<div style="width:' + scope.config.width + 'px;z-index:100;border-radius:4px;margin:0px;overflow: hidden;position: relative;"></div>';
-        var popupBodyHtml = '<div style="padding:3px;background:url(/img/layer_bg.png);position: relative;"><div style="line-height:30px;padding:12px;background-color:white;"><div style="margin-bottom:4px;text-align: center;">' + scope.config.title + '</div><div style="text-align: center;"><span class="btn btn-success popup-ok">' + scope.config.okText + '</span>&nbsp;&nbsp;<span class="btn btn-default popup-cancel">' + scope.config.cancelText + '</span></div></div></div>';
 
         element.on('click', function () {
             if (element.data('popup')) return;
             else element.data('popup', true);
 
             var pos = domService.position(element[0]);
-            var popupPanelEle = angular.element(popupPanelHtml);
-            var popupBodyEle = angular.element(popupBodyHtml);
+            var popupPanelEle = angular.element(popupPanelHtml.replace('$width$',scope.config.width));
+            var popupBodyEle = angular.element(popupBodyHtml.replace('$title$',scope.config.title)
+                .replace('$okText$',scope.config.okText)
+                .replace('$cancelText$',scope.config.cancelText));
             popupPanelEle.append(popupBodyEle);
             document.body.appendChild(popupPanelEle[0]);
 
@@ -41,7 +44,10 @@ angular.module('bbsDire').directive('confirmDirective',['domService','utilServic
             popupPanelEle.css({position: 'absolute', top: (pos.top - popupEleHeight) + 'px', left: pos.left - Math.abs(scope.config.width - elementWidth) / 2 + 'px'});
             popupBodyEle.remove();
 
-            popupBodyEle = angular.element(popupBodyHtml).css('top', popupEleHeight + 'px');
+            popupBodyEle = angular.element(popupBodyHtml.replace('$title$',scope.config.title)
+                .replace('$okText$',scope.config.okText)
+                .replace('$cancelText$',scope.config.cancelText)
+            ).css('top', popupEleHeight + 'px');
             popupPanelEle.append(popupBodyEle);
             popupBodyEle.animate({top: '0px'}, 'fast');
 

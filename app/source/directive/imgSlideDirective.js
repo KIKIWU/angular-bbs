@@ -54,6 +54,8 @@ angular.module('bbsDire').directive('imgSlideDirective',['$window','$log','utilS
         });
         element.append(navPanel);
 
+        pollFn();
+
         function navClickFn() {
             if (!isAnimate) {
                 if (timePollFn) window.clearTimeout(timePollFn);
@@ -84,8 +86,6 @@ angular.module('bbsDire').directive('imgSlideDirective',['$window','$log','utilS
             (++currImg >= list.length) && (currImg = 0);
             timePollFn = window.setTimeout(pollFn, speed);
         }
-
-        pollFn();
     }
 }]);
 
