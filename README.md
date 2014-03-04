@@ -22,15 +22,15 @@ webStorm：开发工具
 6.所有用到的template都用jade编写，由构建脚本统一构建在public/tpl/下  
 7.禁止在控制器中进行dom操作  
 项目目录结构  
-1.顶级目录app，public，vendor，static  
+1.顶级目录app，public，vendor  
 2.app：前端源码所在目录包括html,css,js  
 3.public：源码输出目录  
 4.vendor：放置第三方css和js库  
-5.static：存储静态html  
-6.app/source/：前端js开发目录  
-7.app/source/controller/：控制器目录，按业务模块来划分控制器  
-8.app/source/directive/：指令目录  
-9.app/source/filter/：过滤器目录  
+5.app/source/：前端js开发目录  
+6.app/source/controller/：控制器目录，按业务模块来划分控制器  
+7.app/source/directive/：指令目录  
+8.app/source/filter/：过滤器目录 
+9.app/source/module/: 模块定义目录
 10.app/source/server/：除控制器，指令，过滤器之外的组件定义在该目录中  
 11.app/source/server/RESTful：保存访问服务器的resource实例，以factory公开出来  
 12.jade和css文件统一保存在app/source/view或app/source/controller|directive/\*/view/ 中  
