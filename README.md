@@ -33,8 +33,7 @@ webStorm：开发工具
 9.app/source/module/: 模块定义目录
 10.app/source/server/：除控制器，指令，过滤器之外的组件定义在该目录中  
 11.app/source/server/RESTful：保存访问服务器的resource实例，以factory公开出来  
-12.jade和css文件统一保存在app/source/view或app/source/controller|directive/\*/view/ 中  
-13.app/css：保存全局css文件  
+
 
 
 
